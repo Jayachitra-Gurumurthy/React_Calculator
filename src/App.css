@@ -45,6 +45,10 @@
   
 }
 
+.calc-button:hover {
+  background-color: palevioletred;
+}
+
 .calc-grid{
   grid-template-columns: repeat(3, 80px [col-start]);
   display: inline-grid;
