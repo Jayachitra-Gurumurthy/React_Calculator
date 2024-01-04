@@ -3,7 +3,7 @@ import './App.css';
 
 function Calculator() {
 
-    let symbolArray = ['+','-','/','*','.','=','','Reset'];
+    let symbolArray = ['+','-','/','*','.','=','Del','Reset'];
     const [input1,setInput1] = useState(0);
     const [input2,setInput2] = useState(0);
     
@@ -30,6 +30,7 @@ function Calculator() {
                     case '*' : setInput1(display); setOperation('*'); setDisplay(display.toString().concat(value)); break;
                     case '/' : setInput1(display); setOperation('/'); setDisplay(display.toString().concat(value)); break;
                     case '.' :  operation ? setInput2(input2.toString().concat('.')) : setInput1(input1.toString().concat('.')); setDisplay(display.toString().concat(value));  break; 
+                    case 'Del' :  operation ? setInput2(input2.toString().slice(0,-1)) : setInput1(input1.toString().slice(0,-1)); setDisplay(display.toString().slice(0,-1));  break;
                     default: break;
                 }
             }
@@ -39,6 +40,7 @@ function Calculator() {
                     case '-' : { let temp = parseFloat(input1) - parseFloat(input2); console.log(input1,input2,display); setDisplay(temp); break; }
                     case '*' : { let temp = parseFloat(input1) * parseFloat(input2); console.log(input1,input2,display); setDisplay(temp); break; }
                     case '/' : { let temp = parseFloat(input1) / parseFloat(input2); console.log(input1,input2,display); setDisplay(temp); break; }
+                   
                     default: break;
                 }
                 setOperation(null);
