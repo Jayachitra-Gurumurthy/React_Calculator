@@ -15,21 +15,22 @@ function Calculator() {
 
     function doCalculation(value,type) {
 
-        if(type=='number') {      
-            (display==0 ) ? setDisplay(value) : setDisplay(display.toString().concat(value));
+        if(type==='number') {      
+            (display===0 ) ? setDisplay(value) : setDisplay(display.toString().concat(value));
             if(operation!=null)
-            input2==0 ? setInput2(value) : setInput2(input2.toString().concat(value))
+            input2===0 ? setInput2(value) : setInput2(input2.toString().concat(value))
         }
         else 
         {
-            if(value!= '=') {
+            if(value!== '=') {
                 switch(value) {
                     case 'Reset' : setOperation(null);setInput1(0); setInput2(0); setDisplay(0);break;
                     case '+' : setInput1(display); setOperation('+'); setDisplay(display.toString().concat(value)); break;
                     case '-' : setInput1(display); setOperation('-'); setDisplay(display.toString().concat(value)); break;
                     case '*' : setInput1(display); setOperation('*'); setDisplay(display.toString().concat(value)); break;
                     case '/' : setInput1(display); setOperation('/'); setDisplay(display.toString().concat(value)); break;
-                    case '.' : setDisplay(display.toString().concat(value)); break; 
+                    case '.' :  operation ? setInput2(input2.toString().concat('.')) : setInput1(input1.toString().concat('.')); setDisplay(display.toString().concat(value));  break; 
+                    default: break;
                 }
             }
             else {
@@ -38,6 +39,7 @@ function Calculator() {
                     case '-' : { let temp = parseFloat(input1) - parseFloat(input2); console.log(input1,input2,display); setDisplay(temp); break; }
                     case '*' : { let temp = parseFloat(input1) * parseFloat(input2); console.log(input1,input2,display); setDisplay(temp); break; }
                     case '/' : { let temp = parseFloat(input1) / parseFloat(input2); console.log(input1,input2,display); setDisplay(temp); break; }
+                    default: break;
                 }
                 setOperation(null);
                 setInput1(0); setInput2(0);
