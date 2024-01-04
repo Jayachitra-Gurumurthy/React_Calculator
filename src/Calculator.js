@@ -3,7 +3,7 @@ import './App.css';
 
 function Calculator() {
 
-    let symbolArray = ['+','-','/','*','.','=','Del','Reset'];
+    let symbolArray = ['+','-','/','*','.','Del','=','Reset'];
     const [input1,setInput1] = useState(0);
     const [input2,setInput2] = useState(0);
     
