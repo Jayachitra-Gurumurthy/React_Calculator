@@ -50,9 +50,9 @@ function Calculator() {
         
 return  (
 <div> 
-<h1> Start your Calculation </h1>
+<h1 className='text-primary'> Simple Calculator App </h1>
 <div className="container"> 
-<input type='text' name="resultDisplayText"  value= {display} style={{fontWeight:'bold',height:'70px', display:'block',margin:'auto',border:'none'}} readOnly/>
+<input type='text' name="resultDisplayText"  value= {display} style={{fontWeight:'bold',height:'70px', width:'90%',paddingLeft:'15px', display:'block',margin:'auto',border:'none'}} readOnly/>
 {
    <div className='calc-grid'> 
     {Array.from(new Array(10),(z,y)=>y).map(item=> <button className='calc-button' key={item} onClick={() => doCalculation(item,'number')} > {item}</button> ) }

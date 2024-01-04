@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: url('https://img.freepik.com/premium-vector/pi-day-seamless-pattern-with-mathematical-constants-baked-pie-template-hand-drawn-illustration_2175-12164.jpg');
 }
 
 .App-logo {
@@ -30,21 +31,22 @@
 
 .container {
  width: fit-content;
-  border: 2px solid wheat;
+  border: 2px solid green;
   box-shadow: inset 2px whitesmoke;
   margin: auto;
 }
 .calc-button {
-  background-color: palevioletred;
-  color: whitesmoke;
+  background-color: yellowgreen;
+  color: brown;
   font-size: large;
   width: 60px;
   height:60px;
   margin: 4px;
+  
 }
 
 .calc-grid{
-  grid-template-columns: repeat(3, 70px [col-start]);
+  grid-template-columns: repeat(3, 80px [col-start]);
   display: inline-grid;
   justify-content: space-evenly;
   column-gap: 2px;
